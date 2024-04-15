@@ -38,6 +38,8 @@ export async function generateMetadata(
   } satisfies Metadata;
 }
 
+//test
+
 export default async function Partners({}: Props) {
   const partners = await sanityFetch<PartnersSectionQueryResponse>({
     query: partnersSectionQuery,
