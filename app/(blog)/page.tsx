@@ -17,6 +17,15 @@ import {
   heroQuery,
   settingsQuery,
 } from "@/sanity/lib/queries";
+import Hero from "../components/hero";
+import Partners from "../components/partners";
+import FirstContent from "../components/firstContent";
+import SecondContent from "../components/secondContent";
+import ThirdContent from "../components/thirdContent";
+import AboutSection from "../components/aboutSection";
+import StatsSection from "../components/statsSection";
+import HowItWorks from "../components/howItWorks";
+import GetInTouch from "../components/getInTouch";
 
 function Intro(props: { title: string | null | undefined; description: any }) {
   const title = props.title || demo.title;
@@ -87,30 +96,16 @@ export default async function Page() {
   ]);
 
   return (
-    <div className="container mx-auto px-5">
-      <Intro title={settings?.title} description={settings?.description} />
-      {heroPost ? (
-        <HeroPost
-          title={heroPost.title}
-          slug={heroPost.slug}
-          coverImage={heroPost.coverImage}
-          excerpt={heroPost.excerpt}
-          date={heroPost.date}
-          author={heroPost.author}
-        />
-      ) : (
-        <Onboarding />
-      )}
-      {heroPost?._id && (
-        <aside>
-          <h2 className="mb-8 text-6xl font-bold leading-tight tracking-tighter md:text-7xl">
-            More Stories
-          </h2>
-          <Suspense>
-            <MoreStories skip={heroPost._id} limit={100} />
-          </Suspense>
-        </aside>
-      )}
+    <div>
+      <Hero />
+      <Partners />
+      <FirstContent />
+      <SecondContent />
+      <ThirdContent />
+      <AboutSection />
+      <StatsSection />
+      <HowItWorks />
+      <GetInTouch />
     </div>
   );
 }

@@ -1,0 +1,45 @@
+import { defineField, defineType } from "sanity";
+
+export default defineType({
+  name: 'getInTouch',
+  title: 'Get In Touch',
+  type: 'document',
+  fields: [
+    defineField({
+      name: 'title',
+      title: 'Title',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'paragraph',
+      title: 'Paragraph',
+      type: 'text',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'mainButtonText',
+      title: 'Main Button Text',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'mainButtonUrl',
+      title: 'Main Button URL',
+      type: 'url',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'buttonText',
+      title: 'Button Text',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'buttonUrl',
+      title: 'Button URL',
+      type: 'url',
+      validation: (rule) => rule.required(),
+    }),
+  ],
+});
