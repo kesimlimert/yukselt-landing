@@ -50,7 +50,7 @@ export default async function StatsSection({}: Props) {
         <h1 className="font-semibold text-center text-2xl">{statsContent.title}</h1>
         <div className="grid grid-cols-2 md:flex px-10 md:px-0 justify-center pt-10 gap-0 md:gap-10">
             {statsContent.stats.map((stat, index) => (
-                <div style={{color:"#1E212DA6", borderColor: "rgba(105, 98, 98, 0.29)"}} className={`flex flex-col gap-3 md:border-none justify-center items-center ${index === 0 ? 'border-r border-b' : ''} ${index === 1 ? 'border-l border-b' : ''} ${index === 2 ? 'border-t border-r' : ''} ${index === 3 ? 'border-t border-l' : ''}`}>
+                <div key={index} style={{color:"#1E212DA6", borderColor: "rgba(105, 98, 98, 0.29)"}} className={`flex flex-col gap-3 md:border-none justify-center items-center ${index === 0 ? 'border-r border-b' : ''} ${index === 1 ? 'border-l border-b' : ''} ${index === 2 ? 'border-t border-r' : ''} ${index === 3 ? 'border-t border-l' : ''}`}>
                     <div className="flex">
                         <h1 className="text-3xl pt-3 md:pt-0 font-bold">{stat.value}</h1>
                         <h1 className="text-3xl">{stat.symbol}</h1>

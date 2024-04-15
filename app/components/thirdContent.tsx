@@ -53,6 +53,7 @@ export default async function ThirdContent({}: Props) {
           <div className="grid grid-cols-3 grid-rows-2 gap-4">
             {thirdContent?.experiences.map((experience, index) => (
               <div
+                key={index}
                 className={`flex items-center gap-4 pt-10 ${
                   index === 2 ? "col-start-3 row-span-2 relative" : ""
                 }`}

@@ -3,6 +3,7 @@ import { groq } from "next-sanity";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import { sanityFetch } from "@/sanity/lib/fetch";
 import {
@@ -49,7 +50,7 @@ export default async function Header({}: Props) {
   }
   return (
     <div className="flex container pt-5 absolute top-0 justify-between">
-      <img src={logoUrl} className="pl-2 md:pl-0" alt="Logo" />
+      <Image src={logoUrl} className="pl-2 md:pl-0" alt="Logo" />
       <Link href={header.buttonUrl}>
         <button className="text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-4 py-2.5 me-2 mb-2 dark:bg-orange-600 dark:hover:bg-orange-700 focus:outline-none dark:focus:ring-orange-800">
           {header.buttonText}

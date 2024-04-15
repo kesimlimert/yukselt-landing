@@ -3,6 +3,7 @@ import type { Metadata, ResolvingMetadata } from "next";
 import { groq } from "next-sanity";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
+import Image from "next/image";
 
 import { sanityFetch } from "@/sanity/lib/fetch";
 import {
@@ -44,8 +45,8 @@ export default async function Partners({}: Props) {
   return <div className="flex flex-col items-center justify-center">
         <h1 className="text-5xl hidden md:block font-extrabold py-14">{partners.title}</h1>
         <div className="flex pt-10 md:pt-0 gap-16 overflow-x-auto justify-center">
-          {partners.partnerImages.map((partner) => (
-            <img src={partner.toString()}  alt="Logo" />
+          {partners.partnerImages.map((partner, index) => (
+            <Image key={index} src={partner.toString()}  alt="Logo" />
           ))}
         </div>
     </div>;

@@ -54,9 +54,8 @@ export default async function Footer({}: Props) {
         />
         <div className="flex border-b md:border-solid border-none border-gray-200 pb-20 gap-32">
           {footer?.rows.map((row, index) => (
-            <div className={`md:block ${index !== 0 ? "hidden" : ""}`}>
+            <div key={index} className={`md:block ${index !== 0 ? "hidden" : ""}`}>
               <div
-                key={index}
                 className={`flex flex-col gap-4 ${index !== 0 ? "md:block" : ""}`}
               >
                 <h1 className="text-white pb-2 text-base font-bold">
