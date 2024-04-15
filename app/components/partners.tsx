@@ -46,7 +46,7 @@ export default async function Partners({}: Props) {
         <h1 className="text-5xl hidden md:block font-extrabold py-14">{partners.title}</h1>
         <div className="flex pt-10 md:pt-0 gap-16 overflow-x-auto justify-center">
           {partners.partnerImages.map((partner, index) => (
-            <Image key={index} src={partner.toString()}  alt="Logo" />
+            <Image key={index} width={139} height={40} src={partner.toString()}  alt="Logo" />
           ))}
         </div>
     </div>;

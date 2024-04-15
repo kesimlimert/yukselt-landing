@@ -56,7 +56,7 @@ export default async function Footer({}: Props) {
           {footer?.rows.map((row, index) => (
             <div key={index} className={`md:block ${index !== 0 ? "hidden" : ""}`}>
               <div
-                className={`flex flex-col gap-4 ${index !== 0 ? "md:block" : ""}`}
+                className="flex flex-col gap-4"
               >
                 <h1 className="text-white pb-2 text-base font-bold">
                   {row.title}
