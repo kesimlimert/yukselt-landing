@@ -58,9 +58,9 @@ export default async function Footer({}: Props) {
               <div
                 className="flex flex-col gap-4"
               >
-                <h1 className="text-white pb-2 text-base font-bold">
+                <h2 className="text-white pb-2 text-base font-bold">
                   {row.title}
-                </h1>
+                </h2>
                 {row.links.map((link, index) => (
                   <a
                     key={index}

@@ -6,7 +6,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)"],
+        'roboto': ['Roboto', 'sans-serif'],
+        'spartan': ['"League Spartan"', 'sans-serif']
       },
     },
   },

@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+h1 {
+    position: relative;
+    overflow: hidden;
+    z-index: 1; /* Make the text appear on top */
+  }
+  
+  h1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 184, 0, 1);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+    z-index: -1; /* Make the background appear below the text */
+  }
+  
+  h1:hover::after {
+    transform: scaleX(1);
+  }
+
+  button {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    transform: scale(1.05); /* Adjust this to change the amount of scaling */
+  }

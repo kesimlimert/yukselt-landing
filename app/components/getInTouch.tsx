@@ -46,9 +46,9 @@ export default async function GetInTouch() {
     <div style={{ backgroundColor: "#476CD4" }}>
       <div className="container flex justify-center px-10 md:px-0 pt-28 pb-16 items-center mx-auto">
         <div className="max-w-xl">
-          <h1 className="font-semibold leading-10 text-center text-white text-3xl">
+          <h2 className="font-semibold leading-10 text-center text-white text-3xl">
             {getInTouch.title}
-          </h1>
+          </h2>
           <p className="text-lg font-light leading-8 text-center text-white mt-6">{getInTouch.paragraph}</p>
           <div className="flex justify-center gap-5">
             <Link href={getInTouch.mainButtonUrl}>

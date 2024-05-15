@@ -10,10 +10,11 @@ import {
   SecondContentSectionQueryResponse,
 } from "@/sanity/lib/queries";
 import Image from "next/image";
-import Background from "../public/2.svg";
+import Background from "../public/a1.svg";
 import SmallPc from "../public/smallPc.svg";
 import Pc from "../public/pc.svg";
 import { PlusCircleIcon } from "@heroicons/react/20/solid";
+import styles from "./secondContent.module.css";
 
 type Props = {};
 
@@ -55,7 +56,7 @@ export default async function SecondContent({}: Props) {
         backgroundImage: `url(${Background.src})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-      }} className="h-full px-10 md:px-0 my-36 relative"
+      }} className={`h-full px-10 md:px-0 relative ${styles.wrapper}`}
     >
       <div className="flex flex-col md:flex-row justify-between container mx-auto">
         <div className="max-w-3xl">

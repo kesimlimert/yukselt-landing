@@ -48,13 +48,13 @@ export default async function ThirdContent({}: Props) {
   }
   return (
     <div>
-      <div className="h-full my-36 mx-10 md:mx-0">
+      <div className="h-full mb-36 mx-10 md:mx-0">
         <div className="flex justify-center lg:justify-normal container mx-auto">
           <div className="grid grid-cols-3 grid-rows-2 gap-4">
             {thirdContent?.experiences.map((experience, index) => (
               <div
                 key={index}
-                className={`flex items-center gap-4 pt-10 ${
+                className={`flex items-center gap-4 pt-10 transition-transform duration-500 ease-in-out transform hover:scale-110 ${
                   index === 2 ? "col-start-3 row-span-2 relative" : ""
                 }`}
               >
@@ -80,25 +80,25 @@ export default async function ThirdContent({}: Props) {
                       backgroundPosition: "center",
                     }}
                   >
-                    <h1 className="font-normal text-white text-xl">
+                    <h2 className="font-normal text-white text-xl">
                       {experience?.name}
-                    </h1>
+                    </h2>
                   </div>
                 ) : (
                   <div
                     className={`md:w-40 w-20 h-20 md:h-40 flex justify-center text-center items-center ${index === 4 ? "rounded-3xl bg-purple-300" : "bg-cyan-600 rounded-tr-3xl rounded-bl-3xl"}`}
                   >
                     {" "}
-                    <h1 className="font-normal text-white text-xl">
+                    <h2 className="font-normal text-white text-xl">
                       {experience?.name}
-                    </h1>
+                    </h2>
                   </div>
                 )}
               </div>
             ))}
           </div>
           <div className="flex pl-36 hidden lg:block flex-col max-w-2xl">
-            <h1 style={{lineHeight:"80px"}} className="font-semibold text-5xl">{thirdContent.title}</h1>
+            <h2 style={{lineHeight:"80px"}} className="font-semibold text-5xl">{thirdContent.title}</h2>
             <p className="pt-10 leading-9">{thirdContent.paragraph}</p>
           </div>
         </div>

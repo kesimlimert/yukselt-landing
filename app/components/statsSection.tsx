@@ -3,12 +3,12 @@ import type { Metadata, ResolvingMetadata } from "next";
 import { groq } from "next-sanity";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
-
 import { sanityFetch } from "@/sanity/lib/fetch";
 import {
   statsSectionQuery,
   StatsSectionQueryResponse,
 } from "@/sanity/lib/queries";
+import CountUpClient from "./countUpClient";
 
 type Props = {};
 
@@ -47,18 +47,28 @@ export default async function StatsSection({}: Props) {
   return (
     <div style={{ backgroundColor: "#F4DBC5" }} className="py-20">
       <div className="container mx-auto">
-        <h1 className="font-semibold text-center text-2xl">{statsContent.title}</h1>
+        <h2 className="font-semibold text-center text-2xl">
+          {statsContent.title}
+        </h2>
         <div className="grid grid-cols-2 md:flex px-10 md:px-0 justify-center pt-10 gap-0 md:gap-10">
-            {statsContent.stats.map((stat, index) => (
-                <div key={index} style={{color:"#1E212DA6", borderColor: "rgba(105, 98, 98, 0.29)"}} className={`flex flex-col gap-3 md:border-none justify-center items-center ${index === 0 ? 'border-r border-b' : ''} ${index === 1 ? 'border-l border-b' : ''} ${index === 2 ? 'border-t border-r' : ''} ${index === 3 ? 'border-t border-l' : ''}`}>
-                    <div className="flex">
-                        <h1 className="text-3xl pt-3 md:pt-0 font-bold">{stat.value}</h1>
-                        <h1 className="text-3xl">{stat.symbol}</h1>
-                    </div>
-                    <p className="text-sm pb-3 md:pb-0">{stat.name}</p>
-                </div>
-            
-            ))}
+          {statsContent.stats.map((stat, index) => (
+            <div
+              key={index}
+              style={{
+                color: "#1E212DA6",
+                borderColor: "rgba(105, 98, 98, 0.29)",
+              }}
+              className={`flex flex-col gap-3 md:border-none justify-center items-center ${index === 0 ? "border-r border-b" : ""} ${index === 1 ? "border-l border-b" : ""} ${index === 2 ? "border-t border-r" : ""} ${index === 3 ? "border-t border-l" : ""}`}
+            >
+              <div className="flex">
+                <h2 className="text-3xl pt-3 md:pt-0 font-bold">
+                  <CountUpClient value={stat.value} />
+                </h2>
+                <h2 className="text-3xl">{stat.symbol}</h2>
+              </div>
+              <p className="text-sm pb-3 md:pb-0">{stat.name}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>

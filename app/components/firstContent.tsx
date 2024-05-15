@@ -12,6 +12,8 @@ import {
 import phone from "../public/firstContent.svg"
 import Image from 'next/image';
 import Background from "../public/1.svg"
+import Circle from "../public/circleGray.svg"
+import styles from "./firstContent.module.css"
 
 type Props = {};
 
@@ -47,13 +49,18 @@ export default async function FirstContent({}: Props) {
   if (!firstContent?._id) {
     return notFound();
   }
-  return <div className="my-36 px-10 md:px-0"><div style={{ 
+  return <div className="my-52 px-10 md:px-0">
+    <div style={{ 
     backgroundImage: `url(${Background.src})`,
     backgroundSize: 'cover', 
-    backgroundPosition: 'center' 
-  }} className="flex flex-col md:flex-row justify-center h-full container mx-auto">
-    <Image className="order-2 md:order-1" src={phone} alt="Phone" />
-    <div className="flex flex-col max-w-3xl justify-center">
+    backgroundPosition: 'center' ,
+  }} className={`flex flex-col md:flex-row justify-center h-full container mx-auto ${styles.wrapper}`}>
+    <div className="order-2 md:order-1 relative">
+    <Image src={phone} alt="Phone" />
+    <Image className={`absolute left-56 ${styles.grayCircle}`} src={Circle} alt="Circle" />
+    </div>
+  
+    <div className="flex order-1 md:order-2 flex-col max-w-3xl justify-center">
         <h1 className="font-semibold text-center text-5xl">{firstContent.title}</h1>
         <p className="pt-10 leading-9">{firstContent.paragraph}</p>
     </div>

@@ -1,0 +1,34 @@
+@keyframes moveCircle {
+    0% {
+      top: 29rem;
+    }
+    33% {
+      top: 22.8rem;
+    }
+    66% {
+      top: 17rem;
+    }
+    100% {
+      top: 29rem;
+    }
+  }
+  
+  .grayCircle {
+    animation: moveCircle 6s linear infinite;
+  }
+
+@media (max-width: 510px) {
+   .grayCircle {
+    display: none;
+   };
+}
+
+@media (min-width: 800px) and (max-width: 1280px) {
+  .grayCircle {
+    display: none;
+   };
+}
+
+.wrapper {
+  padding-top: 3rem;
+}

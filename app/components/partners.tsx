@@ -44,12 +44,27 @@ export default async function Partners({}: Props) {
   const partners = await sanityFetch<PartnersSectionQueryResponse>({
     query: partnersSectionQuery,
   });
-  return <div className="flex flex-col items-center justify-center">
-        <h1 className="text-5xl hidden md:block font-extrabold py-14">{partners.title}</h1>
-        <div className="flex pt-10 md:pt-0 gap-16 overflow-x-auto justify-center">
-          {partners.partnerImages.map((partner, index) => (
-            <Image key={index} width={139} height={40} src={partner.toString()}  alt="Logo" />
-          ))}
-        </div>
-    </div>;
+  return (
+    <div className="flex flex-col items-center justify-center w-full">
+      <h1 className="text-5xl hidden md:block font-extrabold mt-20 mb-14">
+        {partners.title}
+      </h1>
+      <div className="flex pt-10 md:pt-0 gap-16 overflow-x-auto justify-center w-full">
+        {partners.partnerImages.map((partner, index) => (
+          <div
+            key={index}
+            className="w-24 h-24 flex-shrink-0 transform hover:scale-110 m-5 transition-transform" // Add hover effects and allow overflow
+          >
+            <Image
+              width={100}
+              height={100}
+              objectFit="cover"
+              src={partner.toString()}
+              alt="Logo"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
