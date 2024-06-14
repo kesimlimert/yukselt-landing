@@ -68,7 +68,7 @@ export default async function SecondContent({}: Props) {
           </div>
         </div>
         <Image src={Pc} style={{marginTop: "-8rem"}} className="hidden xl:block absolute right-0" alt="PC" />
-        <Image src={SmallPc} className="block xl:hidden mx-auto pt-10 md:pt-0" alt="Small PC" />
+        <Image src={SmallPc} width={650} height={550} className="block xl:hidden mx-auto pt-10 md:pt-0" alt="Small PC" />
       </div>
     </div>
   );

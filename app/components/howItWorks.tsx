@@ -7,6 +7,7 @@ import Image from "next/image";
 import Img from "../public/howItWorks.svg";
 import Rectangle from "../public/howItRect.svg";
 import Link from "next/link";
+import styles from "./howItWorks.module.css";
 
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { howItWorksQuery, HowItWorksQueryResponse } from "@/sanity/lib/queries";
@@ -47,7 +48,7 @@ export default async function HowItWorks({}: Props) {
     return notFound();
   }
   return (
-    <div style={{ backgroundColor: "#FEF7F1" }}>
+    <div className={styles.wrapper} style={{ backgroundColor: "#FEF7F1" }}>
       <div className="container flex flex-col lg:flex-row justify-between px-10 lg:px-0 py-36 items-center mx-auto">
         <div className="relative order-2 pt-24 lg:pt-0">
           <Image className="relative z-10 w-60 h-60 lg:w-full lg:h-full" src={Img} alt="How It Works" />

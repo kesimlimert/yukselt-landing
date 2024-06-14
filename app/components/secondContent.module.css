@@ -1,6 +1,6 @@
 .wrapper {
-    padding-top: 25rem;
-    padding-bottom: 25rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
 }
 
 @media (min-width: 2000px) {
@@ -9,3 +9,22 @@
         padding-bottom: 40rem;
     }
 }
+
+@media (min-width: 1200px) {
+    .wrapper {
+        padding-top: 25rem;
+        padding-bottom: 25rem;
+    }
+}
+
+.wrapper img, .wrapper h1, .wrapper p {
+    animation: fade-in linear;
+    animation-timeline: view();
+    animation-range-end: 700px;
+  }
+  
+  @keyframes fade-in {
+    from { scale: .8; opacity: 0; }
+    to { scale: 1; opacity: 1; }
+  }
+  

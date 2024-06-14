@@ -49,6 +49,7 @@ export async function generateMetadata(
 const images = [firstImage, secondImage, thirdImage, fourthImage];
 
 export default async function Hero() {
+
   const hero = await sanityFetch<HeroSectionQueryResponse>({
     query: heroSectionQuery,
   });

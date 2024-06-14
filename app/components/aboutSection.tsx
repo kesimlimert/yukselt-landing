@@ -3,6 +3,7 @@ import type { Metadata, ResolvingMetadata } from "next";
 import { groq } from "next-sanity";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
+import styles from "./aboutSection.module.css";
 
 import { sanityFetch } from "@/sanity/lib/fetch";
 import {
@@ -51,7 +52,7 @@ export default async function AboutSection({}: Props) {
     return notFound();
   }
   return (
-    <div className="px-10 md:px-0" style={{ backgroundColor: "#FEF7F1" }}>
+    <div className={`px-10 md:px-0 ${styles.wrapper}`} style={{ backgroundColor: "#FEF7F1" }}>
       <div className="container py-20 mx-auto">
         <div className="max-w-2xl">
           <h1 style={{ lineHeight: "80px" }} className="font-semibold text-center lg:text-nomal text-5xl">

@@ -2,8 +2,6 @@ import React from "react";
 import type { Metadata, ResolvingMetadata } from "next";
 import { groq } from "next-sanity";
 import { notFound } from "next/navigation";
-import { Suspense } from "react";
-
 import { sanityFetch } from "@/sanity/lib/fetch";
 import {
   firstContentSectionQuery,
@@ -49,15 +47,15 @@ export default async function FirstContent({}: Props) {
   if (!firstContent?._id) {
     return notFound();
   }
-  return <div className="my-52 px-10 md:px-0">
+  return <div className="my-10 lg:my-52 px-10 md:px-0">
     <div style={{ 
     backgroundImage: `url(${Background.src})`,
     backgroundSize: 'cover', 
     backgroundPosition: 'center' ,
-  }} className={`flex flex-col md:flex-row justify-center h-full container mx-auto ${styles.wrapper}`}>
+  }} className={`flex flex-col md:flex-row justify-center h-full mx-auto ${styles.wrapper}`}>
     <div className="order-2 md:order-1 relative">
-    <Image src={phone} alt="Phone" />
-    <Image className={`absolute left-56 ${styles.grayCircle}`} src={Circle} alt="Circle" />
+      <Image src={phone} alt="Phone" />
+      <Image className={`absolute left-56 ${styles.grayCircle}`} src={Circle} alt="Circle" />
     </div>
   
     <div className="flex order-1 md:order-2 flex-col max-w-3xl justify-center">

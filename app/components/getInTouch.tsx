@@ -5,6 +5,7 @@ import { groq } from "next-sanity";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import Link from "next/link";
+import styles from "./getInTouch.module.css";
 
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { getInTouchQuery, GetInTouchQueryResponse } from "@/sanity/lib/queries";
@@ -43,7 +44,7 @@ export default async function GetInTouch() {
     return notFound();
   }
   return (
-    <div style={{ backgroundColor: "#476CD4" }}>
+    <div className={styles.wrapper} style={{ backgroundColor: "#476CD4" }}>
       <div className="container flex justify-center px-10 md:px-0 pt-28 pb-16 items-center mx-auto">
         <div className="max-w-xl">
           <h2 className="font-semibold leading-10 text-center text-white text-3xl">

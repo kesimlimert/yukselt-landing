@@ -56,11 +56,12 @@ export default async function Partners({}: Props) {
             className="w-24 h-24 flex-shrink-0 transform hover:scale-110 m-5 transition-transform" // Add hover effects and allow overflow
           >
             <Image
-              width={100}
-              height={100}
+              width={150}
+              height={150}
               objectFit="cover"
               src={partner.toString()}
               alt="Logo"
+              style={{maxWidth: "fit-content"}}
             />
           </div>
         ))}

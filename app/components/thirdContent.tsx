@@ -3,6 +3,7 @@ import type { Metadata, ResolvingMetadata } from "next";
 import { groq } from "next-sanity";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
+import styles from "./thirdContent.module.css";
 
 import { sanityFetch } from "@/sanity/lib/fetch";
 import {
@@ -48,9 +49,9 @@ export default async function ThirdContent({}: Props) {
   }
   return (
     <div>
-      <div className="h-full mb-36 mx-10 md:mx-0">
+      <div className={`h-full mb-36 mx-10 md:mx-0 ${styles.wrapper}`}>
         <div className="flex justify-center lg:justify-normal container mx-auto">
-          <div className="grid grid-cols-3 grid-rows-2 gap-4">
+          <div className={`grid grid-cols-3 grid-rows-2 gap-4 ${styles.experiences}`}>
             {thirdContent?.experiences.map((experience, index) => (
               <div
                 key={index}
@@ -98,7 +99,7 @@ export default async function ThirdContent({}: Props) {
             ))}
           </div>
           <div className="flex pl-36 hidden lg:block flex-col max-w-2xl">
-            <h2 style={{lineHeight:"80px"}} className="font-semibold text-5xl">{thirdContent.title}</h2>
+            <h1 style={{lineHeight:"80px"}} className="font-semibold text-5xl">{thirdContent.title}</h1>
             <p className="pt-10 leading-9">{thirdContent.paragraph}</p>
           </div>
         </div>
